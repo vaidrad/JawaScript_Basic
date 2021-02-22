@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+</head>
+<body>
+    <h1>Its alive! Alive!</h1>
+    <p>Решение каждой задачи закоментировано</p>
+    <script>
+        // 1)
+        /*var a = 1, b = 1, c, d;
+        c = ++a; alert(c);           // 2 - выдает 2 потому что перед присваиванием значения переменной с значение переменной а мы ее увеличиваем на 1
+        d = b++; alert(d);           // 1 - выдает 1 потому что увеличение переменной b происходит после операции присваивания
+        c = (2+ ++a); alert(c);      // 5 - переменная а имела значение 2, была увеличена на 1 и еще +2, получается 5
+        d = (2+ b++); alert(d);      // 4 - переменная b имела значение 2, еще +2 получается 4
+        alert(a);                    // 3 - мы два раза величили переменную, получилось 3
+        alert(b);                    // 3 - мы два раза величили переменную, получилось 3 */ 
+
+        // 2)
+        /*var a = 2;
+        var x = 1 + (a *= 2); //x будет равен 5. *= это присваивание с умножением */
+        
+        // 3)
+        /*var a = 5;
+        var b = -4;
+
+        if(a>=0 & b>=0) {
+            if(a>b) {
+                alert (a-b);
+            } else {
+                alert (b-a);
+            }
+        } else if(a<0 & b<0) {
+            alert (a*b);
+        } else {
+            alert (a+b);
+        }*/
+
+        // 4)
+        /*var a=6
+        function writenumber(number) {
+            if (number>=a) {
+                document.write(number + "<br>")
+            }
+        }
+        switch (a) {
+            case 0:
+                writenumber(0);
+            case 1:
+                writenumber(1);
+            case 2:
+                writenumber(2);
+            case 3:
+                writenumber(3);
+            case 4:
+                writenumber(4);
+            case 5:
+                writenumber(5);
+            case 6:
+                writenumber(6);
+            case 7:
+                writenumber(7);
+            case 8:
+                writenumber(8);
+            case 9:
+                writenumber(9);
+            case 10:
+                writenumber(10);
+            case 11:
+                writenumber(11);
+            case 12:
+                writenumber(12);
+            case 13:
+                writenumber(13);
+            case 14:
+                writenumber(14);
+            case 15:
+                writenumber(15);
+                break;
+        }*/
+
+        // 5)
+        /*function sum(a, b) {
+            return a+b;
+        }
+
+        function subtract(a, b) {
+            if(a>b) {
+                return a-b;
+            } else{
+                return b-a;
+            }
+        }
+
+        function divide(a, b) {
+            return a/b;
+        }
+
+        function multiply(a, b) {
+            return a*b;
+        }
+        
+        var a = +prompt("введите число а");
+        var b = +prompt("введите число b");
+        var c //выводящаяся переменная
+        alert(sum(a,b))
+        alert(subtract(a,b))
+        alert(divide(a,b))
+        alert(multiply(a,b))*/
+
+        // 6)
+        /*var a = 5;
+        var b = -4;
+
+        function mathOperationDifference(a, b) {
+            if(a>b) {
+                return (a-b);
+            } else {
+                return (b-a);
+            }
+        }
+
+        function mathOperationProduct(a, b) {
+            return (a*b);
+        }
+
+        function mathOperationSum(a, b) {
+            return (a+b);
+        }
+
+        function mathOperation(arg1, arg2, operation){
+            switch (operation) {
+                case 0:
+                    return mathOperationDifference(arg1, arg2);
+                    break;
+                case 1:
+                    return mathOperationProduct(arg1, arg2);
+                    break;
+                case 2:
+                    return mathOperationSum(arg1, arg2);
+                    break;
+                default:
+                    console.log("0 - разность чисел. 1 - произведение чисел. 2 - сумма чисел");
+                    break;
+            }
+        } */
+        // 7)
+        /*
+        alert(0 != null) // Всегда выдает ложь, кроме как на неравенство. Мне кажется дело в неравнозначности типов объектов
+        
+        */
+
+        // 8)
+        /*
+        function power(val, pow){ //Функция возвращает значение степени указаного числа в указаную степень.
+            if(pow==0){
+                return 1;
+            } else {
+                return val*power(val, pow-1);
+            }
+        }
+
+        */
+
+    </script>
+</body>
+</html>
