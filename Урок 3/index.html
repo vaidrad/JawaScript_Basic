@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+</head>
+<body>
+    <h1>Its alive! Alive!</h1>
+    <p>Домашнее задание :)</p>
+    <script>
+
+        // Задание 1
+        var numbers = []; //Масив с простыми числами который мы выведем
+        var searchNumber = +prompt("До какого числа нужно искать простые числа?"); //До какого числа ищем простые числа
+        var i = 2; //счетчик для поиска простых чисел
+        var checklimit = Math.floor(Math.sqrt(searchNumber)); //До этого числа будут браться делители
+
+        function checkDivider(number, divider){ //функция для проверки или число делится на делитель
+            var check = number % divider;
+            var checkResult = false;
+            if(check == 0){
+                checkResult = true;
+            }
+            return checkResult;
+        }
+
+        while((searchNumber<=0)||(isNaN(searchNumber))){    //проверка
+            searchNumber = +prompt("Введите целое число больше ноля");
+        }
+        
+        while(i<=searchNumber) { //цикл для поиска простых чисел
+            if(i == 2){
+                numbers.push(i); 
+            } else {for(var j = 0; j<numbers.length; j++){
+                if(numbers[j]<=checklimit){
+                    if (checkDivider(i, numbers[j])){
+                        break;
+                    }
+                }
+                if(j == (numbers.length - 1)){
+                    numbers.push(i);
+                    console.log(i);
+                    break;
+                }
+            }
+            }  
+            i++
+        }
+        document.write("Все простые числа от 2 до " + searchNumber + ": " + numbers);
+        
+
+        // Задание 2 и 3
+        var basketProducts = [[164264, 20], [5792478, 40], [874873, 14], [45524697, 70], [857491, 499], [792973, 99], [8743249, 15]]; //некие товары в корзине
+        var basketPrice = 0; // текущая стоимость товаров в корзине 
+
+        function countBasketPrice(basket) {
+            var curentPrice = 0; //Переменная для подсчета стоимости текущей обсчитываемой корзины или другого источника (например, функционал "сравнить" или нечто подобное)
+            for (var i = 0; i<basket.length; i++) {
+                curentPrice += basket[i][1];
+            }
+            return curentPrice;
+        }
+
+        basketPrice = countBasketPrice(basketProducts); //Стоимость текущей корзины
+        console.log("Общая стоимость всех товаров в корзине: " + basketPrice + " у.е."); //Выводим стоимость в консоль
+
+        //Задание 4
+        for(i=0;i<10;console.log(i++)){}
+
+        //Задание 5
+        var pyramid = "*";
+        console.log(pyramid);
+        for(i=0; i<19;i++){
+            pyramid += "*";
+            console.log(pyramid);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
