@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+</head>
+<body>
+    <h1>Its alive! Alive!</h1>
+    <p>Домашнее задание :)</p>
+    <script>
+
+        // Задание 1
+        // Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, надо получить на выходе объект, в котором в соответствующих свойствах описаны единицы, 
+        // десятки и сотни. Например, для числа 245 надо получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее 
+        // сообщение с помощью console.log и вернуть пустой объект.
+        
+        var number = {} // Объект, который мы потом вернем
+        var userNumber // Число пользователя
+
+        function numbers(userNumbers) {
+            if ((userNumbers > 999)||(userNumbers < -999)) {
+                console.log("Число превышает 999 или меньше -999");
+                var empty = {}
+                return empty;
+            }
+            var numbersObject = {
+                hundred: 0,
+                ten: 0,
+                one: 0
+            }
+            numbersObject.one = userNumbers % 10;
+            numbersObject.ten = (Math.floor(userNumbers/10)) % 10;
+            numbersObject.hundred = (Math.floor(userNumbers/100)) % 10;
+            return numbersObject;
+        }
+        
+        userNumber = +prompt("Введите целое число от 0 до 999, которое будет преобразовано в число.");
+        number = numbers(userNumber);
+        console.log(number);
+        
+
+
+
+
+        // // Задание 2 и 3
+
+//         Продолжить работу с интернет-магазином:
+// В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+// Реализуйте такие объекты.
+// Перенести функционал подсчета корзины на объектно-ориентированную базу.
+
+var basketProducts = { //некие товары в корзине
+    164264: {
+        article: 164264,
+        value: 20,
+        name: 'shirt1'
+    },
+    5792478: {
+        article: 5792478,
+        value: 40,
+        name: 'shirt2'
+    },
+    874873: {
+        article: 874873,
+        value: 14,
+        name: 'polo1'
+    },
+    45524697: {
+        article: 45524697,
+        value: 70,
+        name: 'polo2'
+    },
+    857491: {
+        article: 857491,
+        value: 499,
+        name: 'phone1'
+    },
+    792973: {
+        article: 792973,
+        value: 99,
+        name: 'extra'
+    },
+    8743249: {
+        article: 8743249,
+        value: 15,
+        name: 'clock'
+    }
+}
+
+var basketPrice = 0; // текущая стоимость товаров в корзине
+
+
+        // for (var product of basketProducts){  // не могу понять почему этот код не рабоает, выдает ошибку: index.html:107 Uncaught TypeError: object is not iterable 
+        //     console.log(product.article);
+        // }
+
+for (var key in basketProducts) {
+    basketPrice += (basketProducts[key].value);
+}
+        
+ console.log("Общая стоимость товаров в корзине: "+basketPrice+" у.е.") // Выводим стоимость в консоль
+
+        //Кто хочет стать миллионером
+
+    //Инициализация
+        //Создать объект с вопросами и 4 вариантами ответов, где только один будет правильным. Создал 5 вопросов, не вижу особо смысла размножать кол-во объектов
+
+        var questions = {
+            0: {
+                price: 0
+            },
+            1: {
+                question: "Кто из этих философов в 1864 году написал музыку на стихи А.С. Пушкина «Заклинание» и «Зимний вечер»?",
+                a: {
+                    value: "Юнг",
+                    correct: false
+                },
+                b: {
+                    value: "Гегель",
+                    correct: false
+                },
+                c: {
+                    value: "Ницше Х",
+                    correct: true
+                },
+                d: {
+                    value: "Шопенгауэр",
+                    correct: false
+                },
+                price: 20000
+            },
+            2: {
+                question: "Кто 1-м получил Нобелевскую премию по литературе?",
+                a: {
+                    value: "Романист",
+                    correct: false
+                },
+                b: {
+                    value: "Драматург",
+                    correct: false
+                },
+                c: {
+                    value: "Поэт Х",
+                    correct: true
+                },
+                d: {
+                    value: "Эссеист",
+                    correct: false
+                },
+                price: 75000
+            },
+            3: {
+                question: "С какой буквы начинаются слова, опубликованные в 16-м томе последнего издания Большой советской энциклопедии?",
+                a: {
+                    value: "М Х",
+                    correct: true
+                },
+                b: {
+                    value: "Н",
+                    correct: false
+                },
+                c: {
+                    value: "О",
+                    correct: false
+                },
+                d: {
+                    value: "П",
+                    correct: false
+                },
+                price: 200000
+            },
+            4: {
+                question: "Какой химический элемент назван в честь злого подземного гнома?",
+                a: {
+                    value: "Гафний",
+                    correct: false
+                },
+                b: {
+                    value: "Кобальт Х",
+                    correct: true
+                },
+                c: {
+                    value: "Бериллий",
+                    correct: false
+                },
+                d: {
+                    value: "Теллур",
+                    correct: false
+                },
+                price: 500000
+            },
+            5: {
+                question: "Какой вид кавалерии предназначался для боевых действий как в конном, так и в пешем строю?",
+                a: {
+                    value: "Кирасиры",
+                    correct: false
+                },
+                b: {
+                    value: "Уланы",
+                    correct: false
+                },
+                c: {
+                    value: "Драгуны Х",
+                    correct: true
+                },
+                d: {
+                    value: "Гусары",
+                    correct: false
+                },
+                price: 1000000
+            }
+        }
+
+        //Создать переменную, в которую будет записываться ответ игрока. Переменную перенес в цикл
+        //Создать переменную с булево значениями, где будет храниться информация о том, или был дан правильный ответ
+        var check = true;
+
+    //процес игры
+        //Поздороваться с игроком и спросить как зовут
+        var name = prompt('Здравствуйте, добро пожаловать в игру "Кто хочет стать миллионером" Введите ваше имя.');
+        //Объявить начало игры
+        alert(name + ", игра начинается! Отвечайте на вопросы только 'a','b', 'c' или 'd'");
+        //Задать вопрос
+        //Проверить варианта ответа
+        //Если ошибся - игра завершается
+        //Если правильно - переходим к следующему
+        //Если ответил правильно 5 раз - поздравить игрока
+        for(var i = 1; i<=5; i++) {
+            do {
+                var answer = prompt("вопрос №" + [i] + ": " + questions[i].question + "   Вариант a: " + questions[i].a.value + "   Вариант b: " + questions[i].b.value + "   Вариант c: " + questions[i].c.value + "   Вариант d: " + questions[i].d.value);
+            } while ((answer != "a")&&(answer != "b")&&(answer != "c")&&(answer != "d"));
+            check = (questions[i][answer].correct);
+            if (check == false) {
+                alert("Увы, ответ не верный. Ваш выигрыш составляет: " + questions[i-1].price + "руб.");
+                break;
+            }
+            alert("На данный момент сумма вашего выигрыша составляет: " + questions[i].price + "руб.");
+        }
+
+        if (check == true) {
+            alert("Поздравляем, вы выиграли 1000000 у.е. Поздравляю! Чтобы получить ваш приз, обратитесь в ближайший банк.");
+        }
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
